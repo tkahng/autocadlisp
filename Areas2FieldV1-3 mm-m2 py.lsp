@@ -26,9 +26,9 @@
 ;;  Version 1.3    -    2014-07-17                                      ;;
 ;;----------------------------------------------------------------------;;
 
-(defun c:a2f ( / *error* fmt inc ins lst sel str )
+(defun c:p2f ( / *error* fmt inc ins lst sel str )
 
-    (setq fmt "%lu2%ct8[0.00000030249]%th44") ;; Field Formatting
+    (setq fmt "%lu2%pr2%ct8[0.00000030249]%th44") ;; Field Formatting
 
     (defun *error* ( msg )
         (LM:endundo (LM:acdoc))
