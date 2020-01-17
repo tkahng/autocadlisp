@@ -1,6 +1,7 @@
+;;;https://forums.autodesk.com/t5/visual-lisp-autolisp-and-general/batch-plot-to-pdf-in-model-space/m-p/6220396#M339775
 (vl-load-com)
-(defun c:demo (/ dwg file hnd i len llpt lst mn mx ss tab urpt)
-    (if (setq ss (ssget "_X" '((0 . "INSERT") (2 . "A1-"))))
+(defun c:demo (/ dwg file hnd i len llpt lst mn mx sc ss tab urpt)
+    (if (setq ss (ssget "_X" '((0 . "INSERT") (2 . "sheet1"))))
         (progn
             (repeat (setq i (sslength ss))
                 (setq hnd (ssname ss (setq i (1- i)))
@@ -25,6 +26,7 @@
                 (setq llpt (vlax-safearray->list mn)
                       urpt (vlax-safearray->list mx)
                       len  (distance llpt (list (car urpt) (cadr llpt)))
+                      sc   (fix (/ 420.0 len))
                 )
                 (command "-plot"
                          "yes"
@@ -37,10 +39,10 @@
                          "Window"
                          llpt
                          urpt
-                         "Fit"
+                         (strcat (itoa sc) ":1")
                          "Center"
                          "yes"
-                         "grayscale.ctb"
+                         "jb.ctb"
                          "yes"
                          ""
                 )
