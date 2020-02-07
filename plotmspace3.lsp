@@ -31,8 +31,10 @@
                 (command "-plot"
                          "yes"
                          (car x)
-                         "DWG TO PDF.PC3"
-                         "ISO A3 (420.00 x 297.00 MM)"
+                        ;  "DWG TO PDF.PC3"
+                         "DocuWorks Printer"
+                        ;  "ISO A3 (420.00 x 297.00 MM)"
+                         "A3 (297x420mm)"
                          "Millimeters"
                          "Landscape"
                          "No"
