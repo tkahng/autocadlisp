@@ -41,7 +41,7 @@
                          "Fit"
                          "Center"
                          "yes"
-                         "grayscale.ctb"
+                         "jb.ctb"
                          "yes"
                          ""
                 )
