@@ -31,14 +31,14 @@
                          "yes"
                          (car x)
                          "DocuWorks Printer"
-                         "A3 (297x420mm)"
+                         "A4 (210x297mm)"
                          "Millimeters"
                          "Landscape"
                          "No"
                          "Window"
                          llpt
                          urpt
-                         "1=300"
+                         "1=400"
                          "Center"
                          "yes"
                          "jb.ctb"
