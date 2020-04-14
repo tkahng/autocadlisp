@@ -1,6 +1,6 @@
 ;;;https://forums.autodesk.com/t5/visual-lisp-autolisp-and-general/batch-plot-to-pdf-in-model-space/m-p/6220396#M339775
 (vl-load-com)
-(defun c:plotblock (/ dwg file hnd i len llpt lst mn mx ss tab urpt)
+(defun c:plotblockpdf (/ dwg file hnd i len llpt lst mn mx ss tab urpt)
     (if (setq ss (ssget '((0 . "INSERT"))))
         (progn
             (repeat (setq i (sslength ss))
@@ -26,28 +26,33 @@
                 (setq llpt (vlax-safearray->list mn)
                       urpt (vlax-safearray->list mx)
                       len  (distance llpt (list (car urpt) (cadr llpt)))
+                      sc   (fix (/ 420.0 len))
                 )
                 (command "-plot"
                          "yes"
                          (car x)
-                         "DocuWorks Printer"
-                        ;  "A4 (210x297mm)"
-                         "A3 (297x420mm)"
+                         "DWG TO PDF.PC3"
+                         "ISO A3 (420.00 x 297.00 MM)"
                          "Millimeters"
                          "Landscape"
                          "No"
                          "Window"
                          llpt
                          urpt
-                         "1=600"
+                         "1=400"
                          "Center"
                          "yes"
                          "jb.ctb"
                          "yes"
-                         "As displayed"
-                         "No"
-                         "No"
-                         "Yes"
+                         ""
+                )
+                (if (/= (car x) "Model")
+                    (command "No" "No" file "no" "Yes")
+                    (command
+                        file
+                        "no"
+                        "Yes"
+                    )
                 )
             )
         )
