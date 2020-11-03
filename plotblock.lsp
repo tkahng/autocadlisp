@@ -39,10 +39,11 @@
                          "Window"
                          llpt
                          urpt
-                         "1=600"
+                         "1=200"
                          "Center"
                          "yes"
-                         "jb.ctb"
+                        ;  "jb.ctb"
+                         "소방기계A3.ctb"
                          "yes"
                          "As displayed"
                          "No"
