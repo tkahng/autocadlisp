@@ -30,7 +30,8 @@
                 (command "-plot"
                          "yes"
                          (car x)
-                         "DocuWorks Printer"
+                        ;  "DocuWorks Printer"
+                         "DocuWorks Printer.pc3"
                         ;  "A4 (210x297mm)"
                          "A3 (297x420mm)"
                          "Millimeters"
@@ -39,7 +40,8 @@
                          "Window"
                          llpt
                          urpt
-                         "1=200"
+                        ;  "1=200"
+                         "Fit"
                          "Center"
                          "yes"
                          "jb.ctb"
