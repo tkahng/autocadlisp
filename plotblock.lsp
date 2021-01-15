@@ -36,6 +36,7 @@
                          "A3 (297x420mm)"
                          "Millimeters"
                          "Landscape"
+                        ;  "Portrait"
                          "No"
                          "Window"
                          llpt
